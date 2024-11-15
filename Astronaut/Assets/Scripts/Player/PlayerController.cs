@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rigidbody2D;
     [SerializeField] float force;
+    public static bool isOnPlanet;
 
     private void Start()
     {
@@ -18,4 +19,5 @@ public class PlayerController : MonoBehaviour
             rigidbody2D.AddForce(transform.up * force, ForceMode2D.Impulse);
         }
     }
+
 }
