@@ -11,12 +11,13 @@ public class AttachToPlanet : MonoBehaviour
         if (collision.gameObject.layer == 6 || collision.gameObject.layer == 0)
         {
             gameObject.transform.SetParent(collision.transform);
-            if (!isFirstTime && collision.gameObject.layer == 6)
+            if (!isFirstTime && collision.gameObject.layer == 6 && planet!=collision.gameObject)
             {
                 print(collision.gameObject.layer);
                 spawnPlanets.Spawn(collision.gameObject.transform);
                 MoveCamera.canChangePos = true;
                 planet = collision.gameObject;
+                print("планета");
             }
             else isFirstTime = false;
             Vector2 rotDir = transform.position - collision.transform.position;
@@ -39,16 +40,6 @@ public class AttachToPlanet : MonoBehaviour
     }
 
 
-
-
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-
-        PlayerController.isOnPlanet = false;
-        gameObject.transform.SetParent(null);
-
-    }
 
 
 }

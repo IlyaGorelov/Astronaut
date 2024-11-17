@@ -14,9 +14,14 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.Mouse0)|| Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
         {
-            rigidbody2D.AddForce(transform.up * force, ForceMode2D.Impulse);
+            if (isOnPlanet)
+            {
+                rigidbody2D.AddForce(transform.up * force, ForceMode2D.Impulse);
+                isOnPlanet = false;
+                transform.SetParent(null);
+            }
         }
     }
 
