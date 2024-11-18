@@ -13,11 +13,14 @@ public class AttachToPlanet : MonoBehaviour
             gameObject.transform.SetParent(collision.transform);
             if (!isFirstTime && collision.gameObject.layer == 6 && planet!=collision.gameObject)
             {
-                print(collision.gameObject.layer);
                 spawnPlanets.Spawn(collision.gameObject.transform);
                 MoveCamera.canChangePos = true;
                 planet = collision.gameObject;
-                print("планета");
+            }
+           else if (!isFirstTime && collision.gameObject.layer == 8 && planet != collision.gameObject)
+            {
+                MoveCamera.canChangePos = true;
+                planet = collision.gameObject;
             }
             else isFirstTime = false;
             Vector2 rotDir = transform.position - collision.transform.position;

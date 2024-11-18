@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
             {
                 rigidbody2D.AddForce(transform.up * force, ForceMode2D.Impulse);
                 isOnPlanet = false;
+                GetComponent<AudioSource>().Play();
                 transform.SetParent(null);
             }
         }

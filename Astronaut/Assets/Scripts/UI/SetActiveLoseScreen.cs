@@ -34,6 +34,7 @@ public class SetActiveLoseScreen : MonoBehaviour
             {
                 record=ScoreState.score;
                 YandexGame.savesData.record = record;
+                YandexGame.NewLeaderboardScores("LB", record);
                 YandexGame.SaveProgress();
             }
             ScoreState.score = 0;

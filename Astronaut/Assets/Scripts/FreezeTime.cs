@@ -1,4 +1,5 @@
 using UnityEngine;
+using YG;
 
 public class FreezeTime : MonoBehaviour
 {
@@ -12,7 +13,14 @@ public class FreezeTime : MonoBehaviour
             if (go.activeSelf) i++;
         }
         if(i>0)
+        {
+            YandexGame.GameplayStop();
             Time.timeScale = 0;
-        else Time.timeScale = 1;
+        }
+        else
+        {
+            YandexGame.GameplayStart();
+            Time.timeScale = 1;
+        }
     }
 }

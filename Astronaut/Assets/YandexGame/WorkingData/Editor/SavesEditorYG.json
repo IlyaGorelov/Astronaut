@@ -1,7 +1,7 @@
 {
-  "idSave": 2,
+  "idSave": 37,
   "isFirstSession": false,
-  "language": "ru",
+  "language": "en",
   "promptDone": false,
   "money": 1,
   "newPlayerName": "Hello!",
@@ -10,5 +10,6 @@
     true,
     false
   ],
-  "record": 135
+  "record": 20,
+  "isMuted": 0
 }
