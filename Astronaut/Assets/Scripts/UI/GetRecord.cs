@@ -26,7 +26,7 @@ public class GetRecord : MonoBehaviour
         if (YandexGame.SDKEnabled)
             Load();
         recText.text = rec.ToString();
-        YandexGame.GetLeaderboard("LB", 10, 3, 3, "small");
+        ScoreState.score=0;
     }
 
     private void GetRank(LBData data)
@@ -37,7 +37,7 @@ public class GetRecord : MonoBehaviour
 
     public void GoToDevelop()
     {
-        Application.OpenURL("https://yandex.ru/games/developer/104556");
+        Application.OpenURL("https://yandex."+YandexGame.EnvironmentData.domain+"/games/developer/104556");
     }
 
     private void Load()

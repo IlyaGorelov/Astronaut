@@ -6,6 +6,7 @@ public class TakeScore : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerController pc))
         {
+            collision.gameObject.GetComponentsInChildren<AudioSource>()[1].mute = false;
             collision.gameObject.GetComponentsInChildren<AudioSource>()[1].Play();
             ScoreState.score++;
             Destroy(gameObject);
